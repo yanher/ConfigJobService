@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularAPP">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Timer Admin</title>
+
+
+<link href="styles/bootstrap-3.3.5/css/bootstrap.css" rel="stylesheet" />
+<link href="scripts/vendor/bootstrap-modal-master/css/bootstrap-modal.css" rel="stylesheet" />
+<link href="scripts/vendor/bootstrap-modal-master/css/bootstrap-modal-bs3patch.css" rel="stylesheet" />
+<!-- custom -->
+<link href="styles/angular-ui-grid/angular-ui-grid/angular-ui-grid.css" rel="stylesheet" />
+<link href="styles/main.css" rel="stylesheet" />
+<link href="styles/style.css" rel="stylesheet" />
+<link rel="icon" sizes="16x16" href="images/favicon.ico"
+	type="image/png" />
+</head>
+
+<body id="htmlbody">
+    <div ui-view="login"></div>
+    <div ui-view="topbar"></div>
+    <div ui-view="mainbody"></div>
+	<!-- jquery -->
+	<script src="scripts/vendor/jquery/jquery-1.11.2.js"></script>
+	<!-- bootstrap -->
+	<script src="styles/bootstrap-3.3.5/js/bootstrap.js"></script>
+		<script src="scripts/vendor/bootstrap-modal-master/js/bootstrap-modal.js"></script>
+    <script src="scripts/vendor/bootstrap-modal-master/js/bootstrap-modalmanager.js"></script>
+    <!-- angularjs -->
+   	<script src="scripts/vendor/angular/angular.js"></script>
+   	<script src="scripts/vendor/angular/angular-ui-router.js"></script>
+   	<script src="scripts/vendor/angular/angular-resource.js"></script>
+   	<script src="scripts/vendor/angular/ng-storage.js"></script>
+   	<script src="scripts/vendor/angular/ui-bootstrap-tpls-0.13.0.min.js"></script>
+   		<script src="scripts/vendor/cellnav/js/cellnav.js"></script>
+	<script src="scripts/vendor/edit/js/gridEdit.js"></script>
+	<script src="scripts/vendor/angular/angular-ui-grid.js"></script>
+	<script src="scripts/vendor/angular/auto-resize-grid/js/auto-resize.js"></script>
+	<script src="scripts/vendor/angular/exporter/js/exporter.js"></script>
+	<script src="scripts/vendor/angular/pagination/js/pagination.js"></script>
+	<script src="scripts/vendor/angular/resize-columns/js/ui-grid-column-resizer.js"></script>
+	<!-- <script src="scripts/vendor/angular/selection/js/selection.js"></script> -->
+	<script src="scripts/controllers/mainbody.js"></script>
+        <script src="scripts/controllers/topbar.js"></script>
+	<script src="scripts/vendor/utility.js"></script>
+	<script src="scripts/main.js"></script>
+	<script src="scripts/services/mainbodyservice.js"></script>	
+	<script src="scripts/services/host.js"></script>
+	<script src="scripts/services/userservice.js"></script>
+	<script src="scripts/vendor/angular/spin.js"></script>
+	<script src="scripts/vendor/angular/angular-spinner.js"></script>
+
+</body>
+
+</html>

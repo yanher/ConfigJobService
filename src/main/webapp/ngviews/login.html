@@ -1,0 +1,35 @@
+﻿<div class="container" ng-hide="$sessionStorage.user">
+       <div class="row" >
+       <div class="col-md-4" style="margin-left:30.5%">
+       <img src="images/58fangchan.jpg" style="position:absolute"/>
+       </div>
+        </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <form>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Timer Admin System</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="un" class="control-label col-md-3">Name:</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" ng-model="userName" placeholder="user name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pd" class="control-label col-md-3">Password:</label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" ng-model="password" placeholder="user password" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer text-right">
+                        <input type="submit" ng-disabled="!userName||!password" value="Login" class="btn btn-default" ng-click="login()">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

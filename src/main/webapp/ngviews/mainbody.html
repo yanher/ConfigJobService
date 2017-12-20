@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="gridClass" ui-grid="gridOptions" ui-grid-resize-columns ui-grid-edit ui-grid-cellnav ui-grid-pagination ui-grid-exporter></div>
+</div>
+
+<div id="logviewer" class="modal fade" style="">
+   <form class="form" name="logform">
+      <div class="modal-header">
+         <input class="colvalue" type="text" name="command" ng-model="command" style="width:250px;" placeholder="Input Command" required/>
+         <div class="btn btn-primary" 
+              ng-disabled="logform.command.$error.required||submitted" 
+              ng-click="submitted||logform.command.$error.required||grep()" ng-blur="this.className='blur'"  
+         style="text-align:middle;width:100px">grep log</div>
+         <button type="button" class="close" data-dismiss="modal">x</button>
+        <!-- <h3 style="text-align:center;"></h3> -->
+    </div>
+    <span us-spinner spinner-theme="smallGray" spinner-key="spinner-2" style="position:absolute;padding-top:40%;margin-left:50%;" z-index="9999"></span>
+    <div class="modal-body" >
+       <pre style="logtext">{{logdata}}</pre>
+    </div>
+    <!-- <div class="modal-footer"></div> -->
+   </form>
+</div>

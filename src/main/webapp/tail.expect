@@ -1,0 +1,26 @@
+set timeout 300
+set ip [lindex $argv 0]
+set workspace [lindex $argv 1]
+set jobName [lindex $argv 2]
+set lastNum [lindex $argv 3]
+spawn ssh root@$ip
+expect "#"
+send "cd $workspace \r"
+expect "#"
+send "cd logs \r"
+expect "#"
+set jobLog ${jobName}.log
+send "echo start_retrieve \r"
+expect "#"
+if { $lastNum == 0 } {
+ send "tail -n 100 $jobLog \r"
+} else {
+ set nextNum [expr $lastNum + 1]
+ #send "more +$nextNum -10000 $jobLog \r"
+ send "cat $jobLog | tail -n +$nextNum \r"
+}
+expect "#"
+send "echo last_row_number`cat $jobLog|wc -l` \r"
+expect "#"
+send "exit \r"
+expect eof

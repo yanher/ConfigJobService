@@ -1,0 +1,164 @@
+body{
+	/*background: url(../images/bgn33.jpg) no-repeat 0px 0px;*/
+	background-color:ghostwhite;
+	font-family: 'Open Sans', sans-serif;
+	background-size:cover!important;
+	-webkit-background-size:cover!important;
+	-moz-background-size:cover!important;
+	-o-background-size:cover!important;
+	height:100%;
+}
+#changebgnbtn{
+	color:#2086bf;	
+}
+#changebgnbtn:hover{
+	color:#2086bf;	
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.element {
+  .center-block();
+}
+.form {
+    background: ghostwhite;
+	position: relative;
+	width: 40%;
+	height:30%;
+	top:0%;
+	bottom:5%;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+}
+.head-info {
+		opacity:1.0;
+  text-align: center;
+  font-weight: 3000;
+  font-size: 2.5em;
+  color: #000080;
+  height: 70px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-o-border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-o-border-top-right-radius: 10px;
+}
+.avtar img {
+		opacity:1.0;
+  #margin: 2em 0 0;
+  width: 60%;
+  background: DarkSlateBlue;
+  	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-o-border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-o-border-top-right-radius: 10px;
+}
+.text {
+		opacity:1.0;
+  font-size:20px;
+  color: #fff;
+}
+input[type="text"] {
+		opacity:1.0;
+	  width: 100%;
+	  padding: 0.5em 0.25em 0.5em 0.5em;
+	  font-size: 18px;
+	  font-weight: 100;
+	  border-bottom: 1px solid#484856;
+	  border-radius:0px 10px 10px 0px;
+	  color:black;
+}
+input[type="password"] {
+		opacity:1.0;
+	  width: 100%;
+	  padding: 0.5em 0.25em 0.5em 0.5em;
+	  font-size: 18px;
+	  font-weight: 100;
+	  border-bottom: 1px solid#484856;
+	  border-radius:0px 10px 10px 0px;
+	  color:black;
+}
+.submit {
+		opacity:1.0;
+	  border-radius:10px 10px 10px 10px;
+}
+.div1{
+    opacity:1.0;
+	height:15px;
+}
+.div2{
+    opacity:1.0;
+	height:5px;
+}
+.btn-signup{
+	color: #483D8B;
+	background: #483D8B;
+}
+.bootstrap-switch{
+    border-radius:0px 10px 10px 0px;
+        width: 206px!important;
+    margin-right: 0px;
+}   
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary{
+	border-radius:0px 0px 0px 0px;
+	color:white;
+	width: 103px!important;
+	background:#5cb85c;
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default{
+	border-radius:0px 10px 10px 0px;
+	color:white;
+	width: 103px!important;
+	background:#337ab7;
+    padding-left: 8px;
+}
+.bootstrap-switch.bootstrap-switch-on .bootstrap-switch-label, .bootstrap-switch.bootstrap-switch-inverse.bootstrap-switch-off .bootstrap-switch-label{
+	width: 103px!important;
+}
+.bootstrap-switch-animate.bootstrap-switch .bootstrap-switch-container{
+	width:309px!important;
+}
+.bootstrap-switch .bootstrap-switch-label{
+	background:#e2e3e2;
+}
+.bootstrap-switch-off.bootstrap-switch .bootstrap-switch-label, .bootstrap-switch-on.bootstrap-switch-inverse.bootstrap-switch .bootstrap-switch-label{
+	border-radius:0px 0px 0px 0px;
+	width:100px!important;
+}
+.btn-login-submit {
+	width: auto;
+    height: auto;
+    border-radius: 10px 0px 0px 10px;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+.btn-login-submit:hover {
+	width: auto;
+    height: auto;
+    border-radius: 10px 0px 0px 10px;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+#logininputarea{
+    margin-left: -5%;
+    border: 1px solid rgba(0,0,128,0.3);
+    padding-bottom: 0%;
+    border-radius: 10px 10px 10px 10px;
+}

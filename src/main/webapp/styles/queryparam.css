@@ -1,0 +1,97 @@
+
+.panel-body{
+	padding-top:0px;
+	padding-bottom:0px;
+	width:99%;
+}
+#collapseOne{
+	display: block;
+    position: relative;
+    background-color: #ffffff;
+    height: 100%;
+    position:relative;
+   margin-right:auto;
+   margin-left:auto;
+   border:2px solid white;
+   overflow:auto;
+}
+#collapse_panel{
+	margin-bottom:0px;
+	position: relative;
+    height: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    border:none;
+    box-shadow: none;
+}
+.paramvalue {
+	height:29px;
+	width:90%;
+	left:0;
+	border:1px solid gray;
+	position:absolute;
+}
+#leftpanel .row{
+	margin-bottom:5px;
+}
+#reportdata {
+	overflow:auto;
+	height:79%;
+	position:relative;
+	width:102%;
+	margin-top: 0px;
+}
+.reportpage {
+	position:relative;
+	height:100%;
+	width:99.2%;
+}
+#reportdata table tbody tr td table tbody tr td p {
+}
+
+#reportdata table tbody tr td {
+   border:none;
+}
+
+#reportdata table tbody tr .odd{
+	text-align:left;
+    border-right:1px solid black;
+	background-color:white;
+}
+#reportdata table tbody tr .even{
+    text-align:left;
+    border-right:1px solid black;
+    background-color:#CDC9A5;
+}
+
+#reportdata tr:hover { 
+color:#FF3030; 
+text-decoration:blink; 
+} 
+#reportdata tr:active { 
+color:#FFFFFF; 
+text-decoration:none; 
+}
+.reportbtn {
+	background-color:#f2f2f2;
+    color:#62a2c5;
+    font-weight:400;
+    border: 1px solid #f2f2f2;
+    border-radius:2px 2px 2px 2px;
+}
+.reportbtn:hover {
+	background-color:#f2f2f2;
+    border: 1px solid #2086bf;
+    color: #2086bf;
+    font-weight:400;
+    border-radius:2px 2px 2px 2px;
+}
+.reportbtn2{
+	position:relative;
+	text-align:center;
+	width:60px;
+	padding-right:0;
+	padding-left:0;
+	margin-left:5%;
+	right:5%;
+}
