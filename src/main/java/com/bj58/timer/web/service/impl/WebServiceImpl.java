@@ -43,9 +43,6 @@ public class WebServiceImpl implements IWebService {
 	@Override
 	public boolean updateJobCron(JobInfo info) throws Exception {
 		try {
-			String route = info.getProject() + "_" + info.getJob();
-			MqPublisher.publish("start", mqConnectionFactory, route);
-			
 			String key = String.join(":", "project",info.getProject(),"job",info.getJob());
 			String value = JedisUtil.get(jePool,key);
 			String[] values = value.split(":",-1);
@@ -54,6 +51,10 @@ public class WebServiceImpl implements IWebService {
 			values[9] = info.getPhoneNum();
 			value = String.join(":", values);
 			JedisUtil.set(jePool,key, value);
+			
+	    String route = info.getProject() + "_" + info.getJob();
+	    MqPublisher.publish("start", mqConnectionFactory, route);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
@@ -64,9 +65,6 @@ public class WebServiceImpl implements IWebService {
 	@Override
 	public boolean stopJob(String project, String job) throws Exception {
 		try {
-			String route = project + "_" + job;
-			MqPublisher.publish("end", mqConnectionFactory, route);
-
 			String key = String.join(":", "project",project,"job",job);
 			String value = JedisUtil.get(jePool,key);
 			String[] values = value.split(":",-1);
@@ -74,6 +72,9 @@ public class WebServiceImpl implements IWebService {
 			values[11] = "false";
 			value = String.join(":", values);
 			JedisUtil.set(jePool,key, value);
+			
+	    String route = project + "_" + job;
+	    MqPublisher.publish("end", mqConnectionFactory, route);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
@@ -84,9 +85,6 @@ public class WebServiceImpl implements IWebService {
 	@Override
 	public boolean startJob(JobInfo info) throws Exception {
 		try {
-			String route = info.getProject() + "_" + info.getJob();
-			MqPublisher.publish("start", mqConnectionFactory, route);
-			
 			String key = String.join(":", "project",info.getProject(),"job",info.getJob());
 			String value = JedisUtil.get(jePool,key);
 			String[] values = value.split(":",-1);
@@ -96,6 +94,9 @@ public class WebServiceImpl implements IWebService {
 			values[11] = "true";
 			value = String.join(":", values);
 			JedisUtil.set(jePool,key, value);
+			
+	    String route = info.getProject() + "_" + info.getJob();
+	    MqPublisher.publish("start", mqConnectionFactory, route);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
