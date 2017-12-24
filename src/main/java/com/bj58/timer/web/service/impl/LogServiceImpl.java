@@ -72,8 +72,9 @@ public class LogServiceImpl implements ILogService {
 			if(tmp.lastIndexOf("\r\n") >= 0) {
 				tmp = tmp.substring(0, tmp.lastIndexOf("\r\n"));
 				tmp = tmp.replace("[37", "").replace("[01;31m[K", "").replace("[m[K","");
-				tmp = tmp.replace("echo last_row_number`cat email.log |wc -l` \r\n", "");
-				tmp = tmp.replace(";40m[[32;40mroot;40m([36;40mhost/bjdhj-176-180;40m)[35;40m@[0mbjdhj-178-27 [35;40mlogs[0m]# echo last_row_number`cat email.log ", "");
+				//tmp = tmp.replace("echo last_row_number`cat email.log |wc -l` \r\n", "");
+				tmp = tmp.replaceAll(".*last_row_number.*", "");
+				//tmp = tmp.replace(";40m[[32;40mroot;40m([36;40mhost/bjdhj-176-180;40m)[35;40m@[0mbjdhj-178-27 [35;40mlogs[0m]# echo last_row_number`cat email.log ", "");
 				tmp = tmp.replace("exit \r\n", "");
         tmp = Pattern.compile("\n(\\s)*\r").matcher(tmp).replaceAll("");
         tmp = Pattern.compile("\r\n(\\s)*$").matcher(tmp).replaceAll("");
@@ -158,6 +159,8 @@ public class LogServiceImpl implements ILogService {
 			if(tmp.indexOf("\r\n") >= 0)
 			  tmp = tmp.substring(tmp.indexOf("\r\n")+2);
 			
+			tmp.replace("[A\r\n", "");
+			
 			if(i<=limit){
 				if(tmp.lastIndexOf("\r\n") >= 0)
 					tmp = tmp.substring(0, tmp.lastIndexOf("\r\n"));
@@ -198,6 +201,4 @@ public class LogServiceImpl implements ILogService {
         
         return re;
 	}
-    
-	
 }
