@@ -175,6 +175,7 @@ public class LogServiceImpl implements ILogService {
 				      tmp = tmp.replace("[37", "").replace("[01;31m[K", "").replace("[m[K","");
 				      tmp = Pattern.compile("\n(\\s)*\r").matcher(tmp).replaceAll("");
 				      tmp = Pattern.compile("\r\n(\\s)*$").matcher(tmp).replaceAll("");
+				      tmp = tmp.replace("exit \r\n", "");
 				      if(!tmp.trim().equals("")) {
 			          tmp = tmp.concat("\r\n");
 			        } else {
