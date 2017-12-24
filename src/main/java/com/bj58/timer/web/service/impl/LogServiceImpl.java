@@ -159,7 +159,7 @@ public class LogServiceImpl implements ILogService {
 			if(tmp.indexOf("\r\n") >= 0)
 			  tmp = tmp.substring(tmp.indexOf("\r\n")+2);
 			
-			tmp.replace("[A\r\n", "");
+			tmp = tmp.replace("[A\r\n", "");
 			
 			if(i<=limit){
 				if(tmp.lastIndexOf("\r\n") >= 0)
