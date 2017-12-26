@@ -62,7 +62,11 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
  	    			//}
  	    			MainBodyService.showLog(row.entity.project,row.entity.job,$scope.last,row.entity.workspace).success(function(data, status) {
  	 	 		    	$scope.log += data[0].text;
- 	 	 		    	$scope.last = data[1].last;
+ 	 	 		    	if(data[0].text.indexOf('查询日志时间超时') >= 0) {
+ 	 	 		    		$scope.last = '0';
+ 	 	 		    	} else {
+ 	 	 	 		    	$scope.last = data[1].last;
+ 	 	 		    	}
  	 	                //$scope.logdata = $sce.trustAsHtml($scope.log);
  	 	                var log = $scope.log;
                                 log = log.replace(/^ \r\n$/g,'');
@@ -316,10 +320,11 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
     $scope.submitted = false;
 	$scope.command = '';
     $scope.grep = function() {
+    	$interval.cancel(timeout_upd);
     	$scope.spinerService.spin('spinner-2');
     	$scope.submitted = true;
     	MainBodyService.execute($scope.logRow.entity.project,$scope.logRow.entity.job,$scope.logRow.entity.workspace,$scope.command).success(function(data, status) {
-    		    $interval.cancel(timeout_upd);
+    		    //$interval.cancel(timeout_upd);
     		    $scope.log = data.text;
                 $scope.logdata = $sce.trustAsHtml($scope.log);
                 $scope.spinerService.stop('spinner-2');

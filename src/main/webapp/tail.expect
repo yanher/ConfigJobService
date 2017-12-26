@@ -5,11 +5,13 @@ set jobName [lindex $argv 2]
 set lastNum [lindex $argv 3]
 spawn ssh root@$ip
 expect "#"
+send "export PS1=remote# \r"
+expect "#"
 send "cd $workspace \r"
 expect "#"
 send "cd logs \r"
 expect "#"
-set jobLog ${jobName}.log
+set jobLog "${jobName}.log"
 send "echo start_retrieve \r"
 expect "#"
 if { $lastNum == 0 } {
@@ -17,7 +19,7 @@ if { $lastNum == 0 } {
 } else {
  set nextNum [expr $lastNum + 1]
  #send "more +$nextNum -10000 $jobLog \r"
- send "cat $jobLog | tail -n +$nextNum \r"
+ send "cat $jobLog|tail -n +$nextNum \r"
 }
 expect "#"
 send "echo last_row_number`cat $jobLog|wc -l` \r"

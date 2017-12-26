@@ -5,11 +5,13 @@ set jobName [lindex $argv 2]
 set command [lindex $argv 3]
 spawn ssh root@$ip
 expect "#"
+send "export PS1=remote# \r"
+expect "#"
 send "cd $workspace \r"
 expect "#"
 send "cd logs \r"
 expect "#"
-set jobLog ${jobName}.log
+set jobLog "${jobName}.log"
 send "echo start_execute \r"
 expect "#"
 send "cat $jobLog|$command \r"

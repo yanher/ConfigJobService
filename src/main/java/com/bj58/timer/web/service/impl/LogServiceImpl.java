@@ -27,7 +27,7 @@ public class LogServiceImpl implements ILogService {
 			String ip = ws[0];
 			String home = ws[1];
 			pro = Runtime.getRuntime().exec(new String[]{"/bin/bash","-x", "/usr/local/tomcat8/webapps/ConfigJobService/tail.sh", ip,home,job,last});  
-			boolean isFinish = pro.waitFor(36l, TimeUnit.SECONDS);
+			boolean isFinish = pro.waitFor(30l, TimeUnit.SECONDS);
 			if(!isFinish) {
 				re[0] = "查询日志时间超时!\r\n";
 				re[1] = last;
@@ -117,7 +117,7 @@ public class LogServiceImpl implements ILogService {
 			String ip = ws[0];
 			String home = ws[1];
 			pro = Runtime.getRuntime().exec(new String[]{"/bin/bash","-x", "/usr/local/tomcat8/webapps/ConfigJobService/grep.sh", ip,home,job,command});  
-			boolean isFinish = pro.waitFor(200l, TimeUnit.SECONDS);
+			boolean isFinish = pro.waitFor(90l, TimeUnit.SECONDS);
 			if(!isFinish) {
 				re = "检索日志时间超时,请缩小检索范围!\r\n";
 				return re;

@@ -17,6 +17,6 @@ if [[ "$1"x = "$localIp"x ]]; then
   echo last_row_number`cat $3".log"|wc -l`
 else 
   /usr/bin/kinit -kt /etc/krb5.keytab
- /usr/local/bin/expect /usr/local/tomcat8/webapps/ConfigJobService/tail.expect $1 $2 $3 $4 
+  /usr/local/bin/expect /usr/local/tomcat8/webapps/ConfigJobService/tail.expect $1 $2 $3 $4
 fi
 
