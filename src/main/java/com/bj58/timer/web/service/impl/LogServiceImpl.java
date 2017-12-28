@@ -26,7 +26,7 @@ public class LogServiceImpl implements ILogService {
     
 	  Future<String[]> future = LogThreadPool.showExec.submit(new TailTask(ip,home,job,last));
 	  try {
-      re = future.get(2L, TimeUnit.SECONDS);
+      re = future.get(11L, TimeUnit.SECONDS);
       //logger.info("tail日志,返回结果为[msg={},lastNum={}]",re[0],re[1]);
     } catch (CancellationException |ExecutionException | InterruptedException e) {
       logger.error("查询日志出现异常!");
@@ -55,7 +55,7 @@ public class LogServiceImpl implements ILogService {
     Future<String> future = LogThreadPool.showExec.submit(new GrepTask(ip,home,job,command));
     
     try {
-      re = future.get(2L, TimeUnit.SECONDS);
+      re = future.get(120L, TimeUnit.SECONDS);
       //logger.info("grep日志,返回结果为msg={}",re);
     } catch (CancellationException |ExecutionException | InterruptedException e) {
       logger.error("检索日志出现异常!");
