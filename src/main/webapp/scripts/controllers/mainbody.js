@@ -48,7 +48,6 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
     	$scope.logRow = row;
     	$scope.firstLog = true;
     	$('#logviewer').modal({
-    		//templateUrl: 'ngviews/logviewer.html',
  	    	backdrop: 'static',
  	    	width:'90%',
  	    	height:'90%'
@@ -57,16 +56,11 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
  	    	timeout_upd = $interval(function(){
  	    		if(finished === true) {
  	    			finished = false;
- 	    			//if($scope.firstLog == true){
- 	    				$scope.spinerService.spin('spinner-2');
- 	    			//}
+ 	    			$scope.spinerService.spin('spinner-2');
+
  	    			MainBodyService.showLog(row.entity.project,row.entity.job,$scope.last,row.entity.workspace).success(function(data, status) {
  	 	 		    	$scope.log += data[0].text;
- 	 	 		    	//if(data[0].text.indexOf('查询日志时间超时') >= 0) {
- 	 	 		    		//$scope.last = '0';
- 	 	 		    	//} else {
- 	 	 	 		    	$scope.last = data[1].last;
- 	 	 		    	//}
+ 	 	 	 		    $scope.last = data[1].last;
  	 	                //$scope.logdata = $sce.trustAsHtml($scope.log);
  	 	                var log = $scope.log;
                                 log = log.replace(/^ \r\n$/g,'');
@@ -77,7 +71,6 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
  	 	                $scope.logdata = log + "\n";
  	 	                finished = true;
  	 	                $scope.firstLog = false;
-                                //$scope.$apply();
  	 	                $scope.spinerService.stop('spinner-2');
  	 	 		     }).error(function(data, status) {
  	 	 			    alert("日志信息加载失败");
@@ -324,7 +317,6 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
     	$scope.spinerService.spin('spinner-2');
     	$scope.submitted = true;
     	MainBodyService.execute($scope.logRow.entity.project,$scope.logRow.entity.job,$scope.logRow.entity.workspace,$scope.command).success(function(data, status) {
-    		    //$interval.cancel(timeout_upd);
     		    $scope.log = data.text;
                 $scope.logdata = $sce.trustAsHtml($scope.log);
                 $scope.spinerService.stop('spinner-2');
