@@ -62,11 +62,11 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
  	    			//}
  	    			MainBodyService.showLog(row.entity.project,row.entity.job,$scope.last,row.entity.workspace).success(function(data, status) {
  	 	 		    	$scope.log += data[0].text;
- 	 	 		    	if(data[0].text.indexOf('查询日志时间超时') >= 0) {
- 	 	 		    		$scope.last = '0';
- 	 	 		    	} else {
+ 	 	 		    	//if(data[0].text.indexOf('查询日志时间超时') >= 0) {
+ 	 	 		    		//$scope.last = '0';
+ 	 	 		    	//} else {
  	 	 	 		    	$scope.last = data[1].last;
- 	 	 		    	}
+ 	 	 		    	//}
  	 	                //$scope.logdata = $sce.trustAsHtml($scope.log);
  	 	                var log = $scope.log;
                                 log = log.replace(/^ \r\n$/g,'');
