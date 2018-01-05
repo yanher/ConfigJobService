@@ -65,6 +65,12 @@ public class TailTask implements Callable<String[]> {
           tmp = tmp.replace("[37", "").replace("[01;31m[K", "").replace("[m[K","");
           tmp = tmp.replaceAll(".*last_row_number.*", "");
           tmp = tmp.replace("exit \r\n", "");
+          tmp = tmp.replace("remote#logout\r\n", "");
+          tmp = tmp.replace("remote#logout \r\n", "");
+          tmp = tmp.replace("remote#logout", "");
+          tmp = tmp.replace("remote#logout ", "");
+          //tmp = Pattern.compile("Connection to (\\d)+\\.(\\d)+\\.(\\d)+\\.(\\d)+ closed\\.(\\s)*\r\n").matcher(tmp).replaceAll("");
+          //tmp = Pattern.compile("Connection to (\\d)+\\.(\\d)+\\.(\\d)+\\.(\\d)+ closed\\.(\\s)*").matcher(tmp).replaceAll("");
           tmp = Pattern.compile("\n(\\s)*\r").matcher(tmp).replaceAll("");
           tmp = Pattern.compile("\r\n(\\s)*$").matcher(tmp).replaceAll("");
           if(!tmp.trim().equals("")) {
