@@ -143,9 +143,9 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
         enableFiltering: true,
         enablePagination: true, //是否分页，默认为true
         enablePaginationControls: true, //使用默认的底部分页
-        paginationPageSizes: [15, 30, 50, 100], //每页显示个数可选项
+        paginationPageSizes: [13, 15, 30, 50, 100], //每页显示个数可选项
         paginationCurrentPage:1, //当前页码
-        paginationPageSize: 15, //每页显示个数
+        paginationPageSize: 13, //每页显示个数
         totalItems : 0, // 总数量
         useExternalPagination:false ,  //是否使用分页按钮
         gridMenuCustomItems: false,
@@ -156,7 +156,11 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
             width: '9%',
             enableCellEdit: false,
             cellClass: 'gridCellClassNew',
-            headerCellClass: 'gridCellClassNew'
+            headerCellClass: 'gridCellClassNew',
+            sort: {
+                direction: uiGridConstants.ASC,
+                priority: 0,
+            }
         }, {
             field: 'job',
             displayName: '任务',
@@ -164,7 +168,11 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
             enableHiding: false,
             enableCellEdit: false,
             cellClass: 'gridCellClassNew',
-            headerCellClass: 'gridCellClassNew'
+            headerCellClass: 'gridCellClassNew',
+            sort: {
+                direction: uiGridConstants.ASC,
+                priority: 1,
+            }
         }, {
             field: 'cron',
             displayName: 'CRON表达式',
@@ -287,7 +295,11 @@ mainbodyModule.controller('mainbodyController', ['$scope', '$rootScope', '$sessi
     	if(row.entity.running === 'true'){
     		return '开启';
     	}else if (row.entity.running === 'false'){
-    		return '停止';
+    		if(row.entity.cron === '' && row.entity.delay === ''){
+    			return '监听';
+    		}else{
+    			return '停止';
+    		}
     	} else {
     		return '未知';
     	}
